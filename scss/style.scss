@@ -398,6 +398,182 @@ footer p {
   min-height: 20rem;
 }
 
+//============
+// acardion service
+//============
+
+
+.services {
+  padding-bottom:  2rem;
+
+  &-title {
+    margin-bottom: 2rem;
+  }
+
+  &-center {
+    margin-top: 5rem;
+    max-width: var(--fixed-width);
+  }
+}
+
+.toggle {
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  box-shadow: var(--light-shadow);
+  padding: 1.5rem 1.5rem 0 1.5rem;
+  margin-bottom: 2rem;
+
+  &-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: capitalize;
+    padding-bottom: 1rem;
+  }
+
+  &-title p {
+    margin-bottom: 0;
+    letter-spacing: var(--spacing);
+    color: var(--clr-grey-1);
+  }
+
+  &-btn {
+    font-size: 1.5rem;
+    background: transparent;
+    border-color: transparent;
+    cursor: pointer;
+    color: var(--crl-gold);
+    transition: var(--transition);
+  }
+
+  &-text {
+    padding: 1rem 0 1.5rem 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  &-text p {
+    margin-bottom: 0;
+  }
+
+  &-text {
+    display: none;
+  }
+}
+
+.show-toggle-text .toggle-text {
+  display: block;
+}
+
+.toggle-minus-icon {
+  display: none;
+}
+
+.show-toggle-text .toggle-minus-icon {
+  display: inline;
+}
+
+.show-toggle-text .toggle-plus-icon {
+  display: none;
+}
+
+//====================
+
+//====================
+// slider product
+//====================
+
+.slider-container {
+  width: 80vw;
+  margin: 0 auto;
+  height: 200px;
+  max-width: 80rem;
+  position: relative;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--clr-primary-9);
+  color: var(--clr-white);
+  display: grid;
+  place-items: center;
+  transition: all 0.25s ease-in-out;
+  text-align: center;
+}
+
+.slide-img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.slide h3 {
+  font-size: 1.5rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin: 0;
+  padding: 1rem;
+  color: var(--clr-white);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.btn-container{
+  display: flex;
+  justify-content: center;
+  margin-top: 00.75rem;
+}
+
+.prevBtn,
+.nextBtn {
+  position: absolute;
+  top: 50%;
+  transform: -50%;
+  width: 40px;
+  height: 40px;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: white;
+  border-color: transparent;
+  font-size: 1.75rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.prevBtn {
+  left: 30px;
+}
+
+.nextBtn {
+  right: 30px;
+}
+
+
+@media screen and (min-width: 576px) {
+  .slider-container {
+    height: 45vh;
+  }
+}
+@media screen and (min-width: 768px) {
+  .slider-container {
+    height: 55vh;
+  }
+}
+@media screen and (min-width: 992px) {
+  .slider-container {
+    height: 65vh;
+  }
+}
+
+//=========================
+
+
 .btn-container {
   border-top-left-radius: var(--radius);
   border-top-right-radius: var(--radius);

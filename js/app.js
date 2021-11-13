@@ -160,3 +160,68 @@ about.addEventListener('click', function (e) {
         tabConent.classList.add('active');
     }
 });
+//=========
+
+//========
+// acardion services
+//========
+
+const toggles = document.querySelectorAll('.toggle');
+
+toggles.forEach(function (toggle) {
+    const btn = toggle.querySelector('.toggle-btn');
+
+    btn.addEventListener("click", function () {
+        toggles.forEach(function (item) {
+            if (item !== toggle) {
+                item.classList.remove("show-toggle-text");
+            }
+        });
+
+        toggle.classList.toggle("show-toggle-text");
+    });
+});
+
+//=====slider product========
+const slides = document.querySelectorAll('.slide');
+const nextBtn = document.querySelector('.nextBtn');
+const prevBtn = document.querySelector('.prevBtn');
+
+slides.forEach(function (slide, index) {
+    slide.style.left = `${index * 100}%`;
+});
+
+let counter = 0;
+nextBtn.addEventListener('click', function () {
+    counter++;
+    carousel();
+});
+
+prevBtn.addEventListener('click', function () {
+    counter--;
+    carousel();
+});
+
+function carousel() {
+    if (counter < 0) {
+        counter = 0;
+    }
+
+    if (counter < slides.length - 1) {
+        nextBtn.style.display = 'flex';
+    } else {
+        nextBtn.style.display = 'none';
+    }
+
+    if (counter > 0) {
+        prevBtn.style.display = 'flex';
+    } else {
+        prevBtn.style.display = 'none';
+    }
+
+    slides.forEach(function (slide) {
+        slide.style.transform = `translateX(-${counter * 100}%)`;
+    });
+
+}
+prevBtn.style.dosplay = 'none';
